@@ -1,0 +1,23 @@
+{
+  "name": "number-translate",
+  "version": "1.0.0",
+  "description": "将阿拉伯数字转译成其他语言表示",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/litarussell/number-translate.git"
+  },
+  "keywords": [
+    "translate",
+    "number"
+  ],
+  "author": "litarussell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/litarussell/number-translate/issues"
+  },
+  "homepage": "https://github.com/litarussell/number-translate#readme"
+}
