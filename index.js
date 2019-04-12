@@ -13,7 +13,7 @@ function Main (lang) {
         return flag
     }
     this.set = function (lang) {
-        flag = lang
+        if (language.indexOf(lang) !== -1) flag = lang
         return flag
     }
 }
