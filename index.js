@@ -2,33 +2,34 @@
 
 const numTo = require('./lang')
 
-// const language = ['en', 'id']
 const language = Object.keys(numTo)
 
+// 默认转译语言
 const defaultFlag = 'en'
 
 function Main (lang) {
-    this.flag = lang || defaultFlag
+    let flag = lang || defaultFlag
+    this.get = function () {
+        return flag
+    }
+    this.set = function (lang) {
+        flag = lang
+        return flag
+    }
 }
 
 let fn = Main.prototype = {}
 
 // 局部设置语言
-fn.set = lang => new Main(lang)
+fn.setLang = lang => new Main(lang)
 
-// 全局设置语言
-fn.setLang = function (lang) {
-    if (language.indexOf(lang) === -1) return
-    this.flag = lang
-    return this.flag
-}
-
-fn.getLang = function () {
-    return this.flag
+// 获取支持的语言
+fn.getLangs = function () {
+    return language
 }
 
 fn.translate = function (num) {
-    return numTo[this.flag](num)
+    return numTo[this.get()](num)
 }
 
 module.exports = new Main()
